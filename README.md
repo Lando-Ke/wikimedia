@@ -26,9 +26,9 @@ The app should now be available on http://localhost:8000
 * **Sample Response**
   ```json
   {
-	"title" : "height",
-	"type" : "number",
-	"value" : "5.11"}
+	"status": "success",
+    "short_description": "Social media service"
+    }
   ```
     
 ### Assumptions Made
