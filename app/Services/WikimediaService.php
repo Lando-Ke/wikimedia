@@ -30,6 +30,8 @@ class WikimediaService
 
     public function getContent($queryString)
     {
+        //TODO: Add caching for search query to avoid having to ping the API for repeat searches
+
         $url = "https://{$this->getLang()}.wikipedia.org/w/api.php?action=query&prop=revisions&titles={$queryString}&rvlimit=1&formatversion=2&format=json&rvprop=content";
         $response = Http::get($url)->json()['query']['pages'][0];
 
