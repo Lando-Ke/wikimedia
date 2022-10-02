@@ -28,6 +28,8 @@ class WikimediaService
         }
     }
 
+
+
     public function getContent($queryString)
     {
         //TODO: Add caching for search query to avoid having to ping the API for repeat searches
@@ -44,7 +46,7 @@ class WikimediaService
                 $newQueryString = str_replace(["#redirect ", "#REDIRECT ", "[[", "]]"],"", $firstLine);
                 return $this->getContent($newQueryString);
             }
-            return str_replace(["short description", "{{", "}}", "|"],"", $firstLine);
+            return str_replace(["short description", "Short description", "{{", "}}", "|"],"", $firstLine);
         } else {
             return false;
         }
